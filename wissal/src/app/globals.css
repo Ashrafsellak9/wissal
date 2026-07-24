@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-midnight: #050816;
+  --color-deep-purple: #4c1d95;
+  --color-soft-pink: #f9a8d4;
+  --color-gold: #d4af37;
+  --color-aurora: #60a5fa;
+  --color-background: #050816;
+  --color-foreground: #f8fafc;
+  --font-sans: var(--font-outfit);
+  --font-display: var(--font-cormorant);
+  --font-serif: var(--font-cormorant);
+}
+
+:root {
+  --background: #050816;
+  --foreground: #f8fafc;
+  --midnight: #050816;
+  --deep-purple: #4c1d95;
+  --soft-pink: #f9a8d4;
+  --gold: #d4af37;
+  --aurora: #60a5fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--midnight);
+  color: var(--foreground);
+}
+
+html.lenis-stopped,
+html.lenis-stopped body {
+  overflow: hidden;
+  height: 100%;
+}
+
+html.custom-cursor,
+html.custom-cursor body,
+html.custom-cursor button,
+html.custom-cursor a {
+  cursor: none;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(76, 29, 149, 0.35), transparent 45%),
+    radial-gradient(ellipse at 80% 20%, rgba(249, 168, 212, 0.12), transparent 40%),
+    var(--midnight);
+  color: var(--foreground);
+  font-family: var(--font-outfit), "Segoe UI", sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.35);
+  color: white;
+}
+
+.font-display {
+  font-family: var(--font-cormorant), "Times New Roman", serif;
+  font-weight: 500;
+}
+
+.font-serif {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.font-sans {
+  font-family: var(--font-outfit), "Segoe UI", sans-serif;
+}
+
+.aurora-veils {
+  background:
+    radial-gradient(circle at 30% 20%, rgba(192, 132, 252, 0.25), transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(249, 168, 212, 0.18), transparent 45%),
+    radial-gradient(circle at 40% 80%, rgba(96, 165, 250, 0.15), transparent 40%);
+}
+
+.handwriting-reveal {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(212, 175, 55, 0.95));
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* Smooth image rendering */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Accessibility focus */
+:focus-visible {
+  outline: 2px solid rgba(212, 175, 55, 0.8);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d4af37, #4c1d95);
+  border-radius: 999px;
+}
